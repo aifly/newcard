@@ -1,0 +1,153 @@
+﻿@import "./base.scss";
+
+html, body, div, p, ul, li, ol, dl, dt, dd, header, footer, video, h1, h2, h3, h4, canvas, section, figure {
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+
+html, body {
+	height: 100%;
+	-webkit-tap-highlight-color: transparent;
+}
+
+body {
+	font-family: "Helvetica Neue", 'Helvetica', "Microsoft YaHei", '微软雅黑', arial, sans-serif;
+	font-size: 14px;
+	overflow: hidden;
+}
+
+img {
+	border: none;
+	vertical-align: middle;
+	width: 100%;
+	height: auto;
+}
+
+.clearfix {
+	clear: both;
+}
+
+input, textarea {
+	outline: none;
+}
+
+.zmiti-index-main-ui {
+	overflow: hidden;
+}
+
+.zmiti-cache-img {
+	opacity: 0;
+	@include pos(f);
+	z-index: -1;
+	left: 500px;
+}
+
+.zmiti-audio-img {
+	@include pos(a);
+	z-index: 12;
+	width: 4rem;
+	top: 55%;
+	left: 3.3rem;
+}
+
+.zmiti-do-btn {
+	@include pos(a);
+	width: 3rem;
+	height: 1rem;
+	text-align: center;
+	line-height: 1rem;
+	color: #570707;
+	background: #fff436;
+	padding: 0 5px;
+	@include br(20px);
+	left: 3.5rem;
+	bottom: .3rem;
+}
+
+.zmiti-letter-C {
+	width: 6rem;
+	height: 3rem;
+	@include pos(a);
+	left: 2rem;
+	z-index: 10;
+	bottom: 2rem;
+	@include transform(rotate(-10deg));
+	@include transform3d();
+
+	&>div {
+		@include pos(a);
+		width: 100%;
+		height: 100%;
+
+		&:nth-of-type(1) {
+			background: #8e3936;
+		}
+
+		&:nth-of-type(2) {
+			top: 0;
+			z-index: 1;
+			@include transformOrigin(center center);
+			@include transform(rotate(-90deg));
+			left: -.6rem;
+			top: -1.8rem;
+			@include transition_transform(.8s);
+
+			&.step1 {
+				@include transform(rotate(-90deg) translate(1.4rem, 0));
+			}
+
+			&.step2 {
+				@include transform(rotate(10deg) translate(2.4rem, -1rem));
+				z-index: 4;
+			}
+
+			&.step3 {
+				@include transform(rotate(10deg) translate(4.4rem, -3rem) scale(2));
+				z-index: 4;
+			}
+
+			img {
+				width: 2.6rem;
+			}
+
+		}
+
+		&:nth-of-type(3) {
+			z-index: 2;
+		}
+
+		&:nth-of-type(4) {
+			z-index: 3;
+			height: 90%;
+			@include transformOrigin(top);
+			@include transition_transform(.7s);
+
+			&.active {
+				@include transform(rotateX(180deg));
+			}
+
+		}
+
+	}
+
+}
+
+.zmiti-audio-img {
+}
+
+.zmiti-letter {
+	display: none;
+	@include pos(a);
+	width: 8rem;
+	left: 1rem;
+	bottom: 1rem;
+	z-index: 10;
+}

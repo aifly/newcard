@@ -4,9 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>newcard</title>
+    <script>
+    	document.addEventListener('touchmove',function(e){e.preventDefault()});
+    	document.getElementsByTagName('html')[0].style.fontSize = document.documentElement.clientWidth/10+'px';
+    </script>
   </head>
   <body>
     <div id="app"></div>
+    <script src="https://cdn.bootcss.com/three.js/r83/three.min.js"></script>
     <!-- built files will be auto injected -->
   </body>
 </html>
