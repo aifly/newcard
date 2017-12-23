@@ -15,6 +15,21 @@
 			<audio src='../assets/bg.mp3' ref='audio'></audio>
 
 			<div v-if='showDoBtn' class="zmiti-do-btn">制作语音贺卡</div>
+
+
+      <Dialog @close-dialog='closeDialog' :show='showUploadDialog' text='上传头像'></Dialog>
+      <Dialog @close-dialog='closeDialog' :show='showRecordDialog' text='录制语音'>
+        <div class="zmiti-record-img"  slot='zmiti-dialog-img'>
+            <img src="../assets/record.png" alt="">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="zmiti-dialog-tip" slot='zmiti-tip'>1s</div>
+          <div class="zmiti-dialog-btn" slot='zmiti-btn1'>重新录制</div>
+          <div class="zmiti-dialog-btn" slot='zmiti-btn2'>保存语音</div>
+      </Dialog>
 			<img src='../assets/letter.gif' class="zmiti-letter" />
 			<img src='../assets/bg.jpg' ref='bg' class="zmiti-cache-img" />
 			<img src='../assets/title.png' ref='title' class="zmiti-cache-img" />
@@ -22,6 +37,8 @@
 			<img src='../assets/particle1.png' ref='particle1' class="zmiti-cache-img" />
 			<img src='../assets/particle2.png' ref='particle2' class="zmiti-cache-img" />
 		</div>
+
+    <Result></Result>
 
 
 		
@@ -32,11 +49,20 @@
 <script>
 import './css/index.css';
 import SpotLight from './SpotLight.js'
-import ZmitiBg from './bg.js'
+import ZmitiBg from './bg.js';
+import Dialog from '@/components/dialog';
+import Result from '@/components/result';
  export default {
   name: 'index',
+  components:{
+    Dialog,
+    Result
+  },
   data () {
     return {
+
+      showUploadDialog:false,
+      showRecordDialog:true,
       viewW:document.documentElement.clientWidth,
       viewH:document.documentElement.clientHeight,
       step1:false,
@@ -187,6 +213,10 @@ import ZmitiBg from './bg.js'
   		render();
 
   	},
+    closeDialog(){
+      this.showUploadDialog = false;
+      this.showRecordDialog = false;
+    },
   	initLetter(){
   		this.step1 = true;
   		var self = this;
@@ -205,7 +235,7 @@ import ZmitiBg from './bg.js'
   						this.showAudioImg = false;
   					});
   					setTimeout(()=>{
-  						audio.play();
+  						///audio.play();
   						this.showDoBtn = true;
 	  					document.addEventListener("WeixinJSBridgeReady", function() {
 				         WeixinJSBridge.invoke('getNetworkType', {}, function(e) {

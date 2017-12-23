@@ -1,0 +1,103 @@
+@import "./base.scss";
+
+.zmiti-dialog-main-ui{
+	$color:#da363d;
+	background:rgba(0,0,0,.5);
+	z-index: 101;
+	.zmiti-dialog-C{
+		width: 7rem;
+		@include pos(a);
+		left: 1.5rem;
+		background:#fff;
+		@include br(10px);
+		top: 2rem;
+		header{
+			@include pos(r);
+
+			text-align: center;
+			span{
+				color:$color;
+				font-size: .6rem;
+				font-weight: bold;
+				@include pos(a);
+				width: 100%;
+				left: 0;
+				text-align: center;
+				bottom: .1rem;
+			}
+
+			label{
+				@include pos(a);
+				width: 1rem;
+				height: 1rem;
+				top: 0;
+				right: 0;
+				z-index: 1;
+
+			}
+		}
+	}
+	.zmiti-dialog-tip{
+		text-align: center;
+	}
+	.zmiti-record-img{
+		width: 4rem;
+		height: 4rem;
+		
+		@include br();
+		@include pos(r);
+		margin:.1rem auto;
+		text-align: center;
+		&>div{
+			@include pos(a);
+			left: .7rem;
+			top: .7rem;
+			width: 2.6rem;
+			height:2.6rem;
+			background:$color;
+			@include br();
+			&:nth-of-type(1){
+				@include animation(record 2s linear infinite);
+			}
+			&:nth-of-type(2){
+				@include animation(record 2s .5s linear infinite);
+			}
+			&:nth-of-type(3){
+				@include animation(record 2s 1s linear infinite);
+			}
+			&:nth-of-type(4){}
+		}
+		img{
+			@include pos(r);
+			z-index: 10;
+			width: 1rem;
+			margin-top: 1.2rem;
+		}
+	}
+
+	@-webkit-keyframes record{ 
+		to{
+			opacity:0;
+			@include transform(scale(1.6));
+		}
+	}
+	.zmiti-upload-img{
+		width: 4rem;
+		height: 4rem;
+		@include br();
+		border:2px solid $color;
+		overflow: hidden;
+		margin:.1rem auto;
+	}
+	.zmiti-dialog-btn{
+		width: 4.5rem;
+		font-size: .5rem;
+		height: 1.2rem;
+		background: $color;
+		text-align: center;
+		line-height: 1.2rem;
+		margin:.5rem auto;
+		color:#fff;
+		@include br(.6rem);
+	}
+}
