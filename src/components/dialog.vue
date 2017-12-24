@@ -8,18 +8,20 @@
 			</header>
 			<slot name='zmiti-dialog-img'>
 				<div class="zmiti-upload-img">
-					<img src="../assets/default-head.png" alt="">
+					<img :src="headimg" v-if='headimg' alt="">
+					<img v-if='!headimg' src='../assets/default-head.png'  alt="">
 				</div>
 			</slot>
 			<slot name='zmiti-tip'>
 				<div class="zmiti-dialog-tip">点击上传头像</div>
+				<input class="zmiti-file" accept="image/*" type='file' ref='file' @change="upload"/>
 			</slot>
 
 			<slot name='zmiti-btn1'>
 				<div class="zmiti-dialog-btn">重新上传</div>
 			</slot>
 			<slot name='zmiti-btn2'>
-				<div class="zmiti-dialog-btn">保存图片</div>
+				<div class="zmiti-dialog-btn" @click='saveimg'>保存图片</div>
 			</slot>
 		</div>
 
@@ -27,20 +29,72 @@
 </template>
 
 <script>
-	import './css/dialog.css'; 
+	import './css/dialog.css';
+
 	export default {
 		name:'zmiti-dialog',
 		props:['show','text'],
 		data(){
 			return {
-
+				headimg:''
 			}
 		},
 		created(){
 			///alert('created1')
 		},
 		methods:{
+
+			 upload(){
+				       var formData = new FormData();
+		  		      var s = this;
+		  
+				      formData.append('setupfile', this.$refs['file'].files[0]);
+				      formData.append('uploadtype', 0);
+				      $.ajax({
+				        type: "POST",
+				        contentType: false,
+				        processData: false,
+				        url: 'http://api.zmiti.com/v2/share/upload_file/',
+				        data: formData
+				      }).done((data) => {
+				        console.log(data)
+				        if (data.getret === 0) {
+				          var url = data.getfileurl[0].datainfourl;
+				          this.headimg = url;
+
+				        }
+				      });
+		    },
+
+		  	createSprite(option={size:10,transparent:true,opacity:1,color:0xffffff,spriteNum:100,range:500}){
+		  		var {size,transparent,opacity,color,spriteNum,range} = option;
+				var loader = new THREE.TextureLoader();
+				var self = this;
+				var texture = loader.load('./src/assets/particle.png');
+
+				var spriteMaterial = new THREE.SpriteMaterial({
+		  			opacity,
+		  			color,
+		  			transparent,
+		  			map:texture
+		  		});
+		  		//spriteMaterial.map.offset = new THREE.Vector2( .2*spriteNum, 0 );
+		  		spriteMaterial.map.repeat = new THREE.Vector2(1,1);
+		  		spriteMaterial.depthTest = false;
+		  		spriteMaterial.transparent = true;
+		  		spriteMaterial.blending = THREE.AdditiveBlending;
+		  		var sprite = new THREE.Sprite(spriteMaterial);
+		  		sprite.scale.set(size,size,size);
+		  		sprite.rotation.x = 10;
+		  		sprite.rotation.y = .5*Math.PI;
+		  		sprite.position.set(Math.random()*range - range / 2,Math.random()*range - range / 2,Math.random()*range - range / 2);
+		  		return sprite;
+		  	},
 			closeDialog(){
+				this.$emit('close-dialog');
+				this.headimg = '';
+			},
+			saveimg(){
 				this.$emit('close-dialog');
 			}
 		},

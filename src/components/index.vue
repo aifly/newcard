@@ -14,7 +14,7 @@
 
 			<audio src='../assets/bg.mp3' ref='audio'></audio>
 
-			<div v-if='showDoBtn' class="zmiti-do-btn">制作语音贺卡</div>
+			<div v-if='showDoBtn' @click='showUploadDialog=true' class="zmiti-do-btn">制作语音贺卡</div>
 
 
       <Dialog @close-dialog='closeDialog' :show='showUploadDialog' text='上传头像'></Dialog>
@@ -61,8 +61,8 @@ import Result from '@/components/result';
   data () {
     return {
 
-      showUploadDialog:false,
-      showRecordDialog:true,
+      showUploadDialog:true,
+      showRecordDialog:false,
       viewW:document.documentElement.clientWidth,
       viewH:document.documentElement.clientHeight,
       step1:false,
@@ -75,30 +75,8 @@ import Result from '@/components/result';
   },
   methods:{
 
-  	createSprite(option={size:10,transparent:true,opacity:1,color:0xffffff,spriteNum:100,range:500}){
-  		var {size,transparent,opacity,color,spriteNum,range} = option;
-		var loader = new THREE.TextureLoader();
-		var self = this;
-		var texture = loader.load('./src/assets/particle.png');
 
-		var spriteMaterial = new THREE.SpriteMaterial({
-  			opacity,
-  			color,
-  			transparent,
-  			map:texture
-  		});
-  		//spriteMaterial.map.offset = new THREE.Vector2( .2*spriteNum, 0 );
-  		spriteMaterial.map.repeat = new THREE.Vector2(1,1);
-  		spriteMaterial.depthTest = false;
-  		spriteMaterial.transparent = true;
-  		spriteMaterial.blending = THREE.AdditiveBlending;
-  		var sprite = new THREE.Sprite(spriteMaterial);
-  		sprite.scale.set(size,size,size);
-  		sprite.rotation.x = 10;
-  		sprite.rotation.y = .5*Math.PI;
-  		sprite.position.set(Math.random()*range - range / 2,Math.random()*range - range / 2,Math.random()*range - range / 2);
-  		return sprite;
-  	},
+
 
   	createParticles(scene){
 
