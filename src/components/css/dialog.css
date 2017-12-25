@@ -1,2 +1,111 @@
-.lt-full{width:100%;height:100%;position:absolute;left:0;top:0}.zmiti-text-overflow{overflow:hidden;white-space:nowrap;word-break:break-all;text-overflow:ellipsis;-webkit-text-overflow:ellipsis}.zmiti-dialog-main-ui{background:rgba(0,0,0,0.5);z-index:101}.zmiti-dialog-main-ui .zmiti-dialog-C{width:7rem;position:absolute;left:1.5rem;background:#fff;border-radius:10px;top:2rem}.zmiti-dialog-main-ui .zmiti-dialog-C header{position:relative;text-align:center}.zmiti-dialog-main-ui .zmiti-dialog-C header span{color:#da363d;font-size:.6rem;font-weight:bold;position:absolute;width:100%;left:0;text-align:center;bottom:.1rem}.zmiti-dialog-main-ui .zmiti-dialog-C header label{position:absolute;width:1rem;height:1rem;top:0;right:0;z-index:1}.zmiti-dialog-main-ui .zmiti-dialog-tip{text-align:center}.zmiti-dialog-main-ui .zmiti-record-img{width:4rem;height:4rem;border-radius:50%;position:relative;margin:.1rem auto;text-align:center}.zmiti-dialog-main-ui .zmiti-record-img>div{position:absolute;left:.7rem;top:.7rem;width:2.6rem;height:2.6rem;background:#da363d;border-radius:50%}.zmiti-dialog-main-ui .zmiti-record-img>div:nth-of-type(1){-webkit-animation:record 2s linear infinite;animation:record 2s linear infinite}.zmiti-dialog-main-ui .zmiti-record-img>div:nth-of-type(2){-webkit-animation:record 2s 0.5s linear infinite;animation:record 2s 0.5s linear infinite}.zmiti-dialog-main-ui .zmiti-record-img>div:nth-of-type(3){-webkit-animation:record 2s 1s linear infinite;animation:record 2s 1s linear infinite}.zmiti-dialog-main-ui .zmiti-record-img img{position:relative;z-index:10;width:1rem;margin-top:1.2rem}@-webkit-keyframes record{to{opacity:0;-webkit-transform:scale(1.6);transform:scale(1.6)}}.zmiti-dialog-main-ui .zmiti-upload-img{width:4rem;height:4rem;border-radius:50%;border:2px solid #da363d;overflow:hidden;margin:.1rem auto}.zmiti-dialog-main-ui .zmiti-dialog-btn{width:4.5rem;font-size:.5rem;height:1.2rem;background:#da363d;text-align:center;line-height:1.2rem;margin:.5rem auto;color:#fff;border-radius:.6rem}
+/*.ant-btn:focus, .ant-btn:hover,.ant-input:focus, .ant-input:hover {
+    background-color: #fff;
+    border-color: #bf1616;
+    box-shadow: 0 0 0 2px rgba(191, 22, 22, 0.1);
+}*/
+.lt-full {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0; }
+
+.zmiti-text-overflow {
+  overflow: hidden;
+  white-space: nowrap;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis; }
+
+.zmiti-dialog-main-ui {
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 101; }
+  .zmiti-dialog-main-ui .zmiti-dialog-C {
+    width: 7rem;
+    position: absolute;
+    left: 1.5rem;
+    background: #fff;
+    border-radius: 10px;
+    top: 2rem; }
+    .zmiti-dialog-main-ui .zmiti-dialog-C header {
+      position: relative;
+      text-align: center; }
+      .zmiti-dialog-main-ui .zmiti-dialog-C header span {
+        color: #da363d;
+        font-size: .6rem;
+        font-weight: bold;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        text-align: center;
+        bottom: .1rem; }
+      .zmiti-dialog-main-ui .zmiti-dialog-C header label {
+        position: absolute;
+        width: 1rem;
+        height: 1rem;
+        top: 0;
+        right: 0;
+        z-index: 1; }
+  .zmiti-dialog-main-ui .zmiti-dialog-tip {
+    text-align: center; }
+  .zmiti-dialog-main-ui .zmiti-record-img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    position: relative;
+    margin: .1rem auto;
+    text-align: center; }
+    .zmiti-dialog-main-ui .zmiti-record-img > div {
+      position: absolute;
+      left: .7rem;
+      top: .7rem;
+      width: 2.6rem;
+      height: 2.6rem;
+      background: #da363d;
+      border-radius: 50%; }
+      .zmiti-dialog-main-ui .zmiti-record-img > div.animate:nth-of-type(1) {
+        -webkit-animation: record 2s linear infinite;
+        animation: record 2s linear infinite; }
+      .zmiti-dialog-main-ui .zmiti-record-img > div.animate:nth-of-type(2) {
+        -webkit-animation: record 2s 0.5s linear infinite;
+        animation: record 2s 0.5s linear infinite; }
+      .zmiti-dialog-main-ui .zmiti-record-img > div.animate:nth-of-type(3) {
+        -webkit-animation: record 2s 1s linear infinite;
+        animation: record 2s 1s linear infinite; }
+    .zmiti-dialog-main-ui .zmiti-record-img img {
+      position: relative;
+      z-index: 10;
+      width: 1rem;
+      margin-top: 1.2rem; }
+@-webkit-keyframes record {
+  to {
+    opacity: 0;
+    -webkit-transform: scale(1.6);
+    transform: scale(1.6); } }
+  .zmiti-dialog-main-ui .zmiti-upload-img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: 2px solid #da363d;
+    overflow: hidden;
+    margin: .1rem auto; }
+  .zmiti-dialog-main-ui .zmiti-dialog-btn {
+    width: 4.5rem;
+    font-size: .5rem;
+    height: 1.2rem;
+    background: #da363d;
+    text-align: center;
+    line-height: 1.2rem;
+    margin: .5rem auto;
+    color: #fff;
+    border-radius: 0.6rem; }
+    .zmiti-dialog-main-ui .zmiti-dialog-btn.scale {
+      -webkit-transition: 0.2s;
+      transition: 0.2s;
+      -webkit-transform: scale(0.95);
+      transform: scale(0.95); }
+    .zmiti-dialog-main-ui .zmiti-dialog-btn.disabled {
+      background: #eee;
+      color: #999; }
+
 /*# sourceMappingURL=dialog.css.map */

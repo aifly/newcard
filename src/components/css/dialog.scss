@@ -1,22 +1,24 @@
 @import "./base.scss";
 
-.zmiti-dialog-main-ui{
-	$color:#da363d;
-	background:rgba(0,0,0,.5);
+.zmiti-dialog-main-ui {
+	$color: #da363d;
+	background: rgba(0, 0, 0, .5);
 	z-index: 101;
-	.zmiti-dialog-C{
+
+	.zmiti-dialog-C {
 		width: 7rem;
 		@include pos(a);
 		left: 1.5rem;
-		background:#fff;
+		background: #fff;
 		@include br(10px);
 		top: 2rem;
-		header{
-			@include pos(r);
 
+		header {
+			@include pos(r);
 			text-align: center;
-			span{
-				color:$color;
+
+			span {
+				color: $color;
 				font-size: .6rem;
 				font-weight: bold;
 				@include pos(a);
@@ -26,78 +28,107 @@
 				bottom: .1rem;
 			}
 
-			label{
+			label {
 				@include pos(a);
 				width: 1rem;
 				height: 1rem;
 				top: 0;
 				right: 0;
 				z-index: 1;
-
 			}
+
 		}
+
 	}
-	.zmiti-dialog-tip{
+
+	.zmiti-dialog-tip {
 		text-align: center;
 	}
-	.zmiti-record-img{
+
+	.zmiti-record-img {
 		width: 4rem;
 		height: 4rem;
-		
 		@include br();
 		@include pos(r);
-		margin:.1rem auto;
+		margin: .1rem auto;
 		text-align: center;
-		&>div{
+
+		&>div {
 			@include pos(a);
 			left: .7rem;
 			top: .7rem;
 			width: 2.6rem;
-			height:2.6rem;
-			background:$color;
+			height: 2.6rem;
+			background: $color;
 			@include br();
-			&:nth-of-type(1){
-				@include animation(record 2s linear infinite);
+
+			&.animate {
+				&:nth-of-type(1) {
+					@include animation(record 2s linear infinite);
+				}
+
+				&:nth-of-type(2) {
+					@include animation(record 2s .5s linear infinite);
+				}
+
+				&:nth-of-type(3) {
+					@include animation(record 2s 1s linear infinite);
+				}
+
 			}
-			&:nth-of-type(2){
-				@include animation(record 2s .5s linear infinite);
+
+			&:nth-of-type(4) {
 			}
-			&:nth-of-type(3){
-				@include animation(record 2s 1s linear infinite);
-			}
-			&:nth-of-type(4){}
+
 		}
-		img{
+
+		img {
 			@include pos(r);
 			z-index: 10;
 			width: 1rem;
 			margin-top: 1.2rem;
 		}
+
 	}
 
-	@-webkit-keyframes record{ 
-		to{
-			opacity:0;
+	@-webkit-keyframes record {
+		to {
+			opacity: 0;
 			@include transform(scale(1.6));
 		}
+
 	}
-	.zmiti-upload-img{
+
+	.zmiti-upload-img {
 		width: 4rem;
 		height: 4rem;
 		@include br();
-		border:2px solid $color;
+		border: 2px solid $color;
 		overflow: hidden;
-		margin:.1rem auto;
+		margin: .1rem auto;
 	}
-	.zmiti-dialog-btn{
+
+	.zmiti-dialog-btn {
 		width: 4.5rem;
 		font-size: .5rem;
 		height: 1.2rem;
 		background: $color;
 		text-align: center;
 		line-height: 1.2rem;
-		margin:.5rem auto;
-		color:#fff;
+		margin: .5rem auto;
+		color: #fff;
 		@include br(.6rem);
+
+		&.scale {
+			@include transition(.2s);
+			@include transform(scale(.95));
+		}
+
+		&.disabled {
+			background: #eee;
+			color: #999;
+		}
+
 	}
+
 }

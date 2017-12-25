@@ -101,16 +101,16 @@ input, textarea {
 			@include transition_transform(.8s);
 
 			&.step1 {
-				@include transform(rotate(-90deg) translate(1.4rem, 0));
+				@include transform(rotate(-90deg) translate3d(1.4rem, 0, 1px));
 			}
 
 			&.step2 {
-				@include transform(rotate(10deg) translate(2.4rem, -1rem));
+				@include transform(rotate(10deg) translate3d(2.4rem, -1rem, 1px));
 				z-index: 4;
 			}
 
 			&.step3 {
-				@include transform(rotate(10deg) translate(4.4rem, -3rem) scale(2));
+				@include transform(rotate(10deg) translate3d(4.4rem, -3rem, 1px) scale(2));
 				z-index: 4;
 			}
 
@@ -131,7 +131,7 @@ input, textarea {
 			@include transition_transform(.7s);
 
 			&.active {
-				@include transform(rotateX(180deg));
+				@include transform(rotateX(180deg) translate3d(0, 0, 2px));
 			}
 
 		}
@@ -152,13 +152,12 @@ input, textarea {
 	z-index: 10;
 }
 
-
-.zmiti-file{
+.zmiti-file {
 	@include pos(a);
 	z-index: 200;
-	width:4rem;
-	left:3rem;
-	opacity:0;
-	top:4.2rem;
-	height:4rem;
+	width: 4rem;
+	left: 1.5rem;
+	opacity: 0;
+	top: 2.2rem;
+	height: 4rem;
 }

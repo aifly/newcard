@@ -1,1 +1,173 @@
 @import "./base.scss";
+
+.zmiti-result-main-ui {
+	z-index: 300;
+	background: #fefae6;
+
+	.zmiti-result-main {
+		width: 9.4rem;
+		height: 96%;
+		margin: 2% auto;
+		@include pos(r);
+
+		.zmiti-chuang {
+			@include pos(a);
+			width: 2rem;
+
+			&:nth-of-type(1) {
+				left: 0;
+				top: 0;
+			}
+
+			&:nth-of-type(2) {
+				right: 0;
+				top: 0;
+				@include transform(rotateY(180deg));
+			}
+
+			&:nth-of-type(3) {
+				bottom: 0px;
+				left: 0px;
+				@include transform(rotate(-90deg));
+			}
+
+			&:nth-of-type(4) {
+				bottom: 0;
+				right: 0px;
+				@include transform(rotate(180deg));
+			}
+
+		}
+
+		.zmiti-line {
+			@include pos(a);
+			background: #d7181f;
+			//url(../../assets/bg.png) repeat;
+			$size: 0.1rem;
+
+			&:nth-of-type(1) {
+				width: 7rem;
+				left: 1.2rem;
+				height: $size;
+				@include transform(scale(1, .8));
+				@include transformOrigin(top);
+			}
+
+			&:nth-of-type(2) {
+				width: $size;
+				left: 0;
+				height: 85%;
+				top: 1rem;
+			}
+
+			&:nth-of-type(3) {
+				width: $size;
+				right: 0;
+				height: 86.5%;
+				top: 1rem;
+			}
+
+			&:nth-of-type(4) {
+				width: 7.16rem;
+				left: 1.0rem;
+				bottom: 0;
+				height: $size;
+			}
+
+		}
+
+		.zmiti-result-head-C {
+			width: 6rem;
+			height: 6rem;
+			@include pos(a);
+			left: 1.7rem;
+			top: 1.5rem;
+
+			.zmiti-result-head {
+				@include pos(a);
+				width: 4.2rem;
+				height: 4.2rem;
+				@include pos(a);
+				left: .9rem;
+				top: .9rem;
+				overflow: hidden;
+				border: 1px solid #d7181f;
+				@include br();
+			}
+
+		}
+
+		.zmiti-result-music {
+			@include pos(a);
+			text-align: center;
+			top: 8rem;
+			left: 1.2rem;
+
+			&>img {
+				&:nth-of-type(1) {
+					width: 1rem;
+				}
+
+				&:nth-of-type(2) {
+					width: 6rem;
+				}
+
+			}
+
+		}
+
+		.zmiti-result-text {
+			@include pos(a);
+			top: 9.5rem;
+			width: 7rem;
+			left: 1.2rem;
+		}
+
+		.zmiti-result-username {
+			@include pos(a);
+			bottom: 2.5rem;
+			width: 8rem;
+			color: #d7181f;
+			font-size: .6rem;
+			text-align: right;
+
+			&>span {
+				@include pos(r);
+
+				&:before {
+					content: '';
+					width: .7rem;
+					height: 2px;
+					background: #d7181f;
+					@include pos(a);
+					left: -.8rem;
+					top: .3rem;
+					@include br();
+				}
+
+			}
+
+		}
+
+		.zmiti-result-send {
+			@include pos(a);
+			bottom: 1.2rem;
+			width: 8rem;
+			text-align: right;
+			color: #d7181f;
+			font-size: .5rem;
+
+			a {
+				color: #d7181f;
+			}
+
+			span {
+				margin: 0 .5rem;
+				text-decoration: underline;
+			}
+
+		}
+
+	}
+
+}

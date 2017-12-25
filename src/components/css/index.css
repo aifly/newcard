@@ -1,2 +1,158 @@
-﻿.lt-full{width:100%;height:100%;position:absolute;left:0;top:0}.zmiti-text-overflow{overflow:hidden;white-space:nowrap;word-break:break-all;text-overflow:ellipsis;-webkit-text-overflow:ellipsis}html,body,div,p,ul,li,ol,dl,dt,dd,header,footer,video,h1,h2,h3,h4,canvas,section,figure{padding:0;margin:0}a{text-decoration:none}li{list-style:none}html,body{height:100%;-webkit-tap-highlight-color:transparent}body{font-family:"Helvetica Neue", 'Helvetica', "Microsoft YaHei", '微软雅黑', arial, sans-serif;font-size:14px;overflow:hidden}img{border:none;vertical-align:middle;width:100%;height:auto}.clearfix{clear:both}input,textarea{outline:none}.zmiti-index-main-ui{overflow:hidden}.zmiti-cache-img{opacity:0;position:fixed;z-index:-1;left:500px}.zmiti-audio-img{position:absolute;z-index:12;width:4rem;top:55%;left:3.3rem}.zmiti-do-btn{position:absolute;width:3rem;height:1rem;text-align:center;line-height:1rem;color:#570707;background:#fff436;padding:0 5px;border-radius:20px;left:3.5rem;bottom:.3rem}.zmiti-letter-C{width:6rem;height:3rem;position:absolute;left:2rem;z-index:10;bottom:2rem;-webkit-transform:rotate(-10deg);transform:rotate(-10deg);-webkit-transform-style:preserve-3d;transform-style:preserve-3d;perspective:800px;-webkit-perspective:800px}.zmiti-letter-C>div{position:absolute;width:100%;height:100%}.zmiti-letter-C>div:nth-of-type(1){background:#8e3936}.zmiti-letter-C>div:nth-of-type(2){top:0;z-index:1;-webkit-transform-origin:center center;transform-origin:center center;-webkit-transform:rotate(-90deg);transform:rotate(-90deg);left:-.6rem;top:-1.8rem;-webkit-transition:-webkit-transform .8s;transition:transform .8s}.zmiti-letter-C>div:nth-of-type(2).step1{-webkit-transform:rotate(-90deg) translate(1.4rem, 0);transform:rotate(-90deg) translate(1.4rem, 0)}.zmiti-letter-C>div:nth-of-type(2).step2{-webkit-transform:rotate(10deg) translate(2.4rem, -1rem);transform:rotate(10deg) translate(2.4rem, -1rem);z-index:4}.zmiti-letter-C>div:nth-of-type(2).step3{-webkit-transform:rotate(10deg) translate(4.4rem, -3rem) scale(2);transform:rotate(10deg) translate(4.4rem, -3rem) scale(2);z-index:4}.zmiti-letter-C>div:nth-of-type(2) img{width:2.6rem}.zmiti-letter-C>div:nth-of-type(3){z-index:2}.zmiti-letter-C>div:nth-of-type(4){z-index:3;height:90%;-webkit-transform-origin:top;transform-origin:top;-webkit-transition:-webkit-transform .7s;transition:transform .7s}.zmiti-letter-C>div:nth-of-type(4).active{-webkit-transform:rotateX(180deg);transform:rotateX(180deg)}.zmiti-letter{display:none;position:absolute;width:8rem;left:1rem;bottom:1rem;z-index:10}.zmiti-file{position:absolute;z-index:200;width:4rem;left:3rem;opacity:0;top:4.2rem;height:4rem}
+@charset "UTF-8";
+/*.ant-btn:focus, .ant-btn:hover,.ant-input:focus, .ant-input:hover {
+    background-color: #fff;
+    border-color: #bf1616;
+    box-shadow: 0 0 0 2px rgba(191, 22, 22, 0.1);
+}*/
+.lt-full {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0; }
+
+.zmiti-text-overflow {
+  overflow: hidden;
+  white-space: nowrap;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis; }
+
+html, body, div, p, ul, li, ol, dl, dt, dd, header, footer, video, h1, h2, h3, h4, canvas, section, figure {
+  padding: 0;
+  margin: 0; }
+
+a {
+  text-decoration: none; }
+
+li {
+  list-style: none; }
+
+html, body {
+  height: 100%;
+  -webkit-tap-highlight-color: transparent; }
+
+body {
+  font-family: "Helvetica Neue", 'Helvetica', "Microsoft YaHei", '微软雅黑', arial, sans-serif;
+  font-size: 14px;
+  overflow: hidden; }
+
+img {
+  border: none;
+  vertical-align: middle;
+  width: 100%;
+  height: auto; }
+
+.clearfix {
+  clear: both; }
+
+input, textarea {
+  outline: none; }
+
+.zmiti-index-main-ui {
+  overflow: hidden; }
+
+.zmiti-cache-img {
+  opacity: 0;
+  position: fixed;
+  z-index: -1;
+  left: 500px; }
+
+.zmiti-audio-img {
+  position: absolute;
+  z-index: 12;
+  width: 4rem;
+  top: 55%;
+  left: 3.3rem; }
+
+.zmiti-do-btn {
+  position: absolute;
+  width: 3rem;
+  height: 1rem;
+  text-align: center;
+  line-height: 1rem;
+  color: #570707;
+  background: #fff436;
+  padding: 0 5px;
+  border-radius: 20px;
+  left: 3.5rem;
+  bottom: .3rem; }
+
+.zmiti-letter-C {
+  width: 6rem;
+  height: 3rem;
+  position: absolute;
+  left: 2rem;
+  z-index: 10;
+  bottom: 2rem;
+  -webkit-transform: rotate(-10deg);
+  transform: rotate(-10deg);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  perspective: 800px;
+  -webkit-perspective: 800px; }
+  .zmiti-letter-C > div {
+    position: absolute;
+    width: 100%;
+    height: 100%; }
+    .zmiti-letter-C > div:nth-of-type(1) {
+      background: #8e3936; }
+    .zmiti-letter-C > div:nth-of-type(2) {
+      top: 0;
+      z-index: 1;
+      -webkit-transform-origin: center center;
+      transform-origin: center center;
+      -webkit-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+      left: -.6rem;
+      top: -1.8rem;
+      -webkit-transition: -webkit-transform 0.8s;
+      transition: -webkit-transform 0.8s;
+      transition: transform 0.8s;
+      transition: transform 0.8s, -webkit-transform 0.8s; }
+      .zmiti-letter-C > div:nth-of-type(2).step1 {
+        -webkit-transform: rotate(-90deg) translate3d(1.4rem, 0, 1px);
+        transform: rotate(-90deg) translate3d(1.4rem, 0, 1px); }
+      .zmiti-letter-C > div:nth-of-type(2).step2 {
+        -webkit-transform: rotate(10deg) translate3d(2.4rem, -1rem, 1px);
+        transform: rotate(10deg) translate3d(2.4rem, -1rem, 1px);
+        z-index: 4; }
+      .zmiti-letter-C > div:nth-of-type(2).step3 {
+        -webkit-transform: rotate(10deg) translate3d(4.4rem, -3rem, 1px) scale(2);
+        transform: rotate(10deg) translate3d(4.4rem, -3rem, 1px) scale(2);
+        z-index: 4; }
+      .zmiti-letter-C > div:nth-of-type(2) img {
+        width: 2.6rem; }
+    .zmiti-letter-C > div:nth-of-type(3) {
+      z-index: 2; }
+    .zmiti-letter-C > div:nth-of-type(4) {
+      z-index: 3;
+      height: 90%;
+      -webkit-transform-origin: top;
+      transform-origin: top;
+      -webkit-transition: -webkit-transform 0.7s;
+      transition: -webkit-transform 0.7s;
+      transition: transform 0.7s;
+      transition: transform 0.7s, -webkit-transform 0.7s; }
+      .zmiti-letter-C > div:nth-of-type(4).active {
+        -webkit-transform: rotateX(180deg) translate3d(0, 0, 2px);
+        transform: rotateX(180deg) translate3d(0, 0, 2px); }
+
+.zmiti-letter {
+  display: none;
+  position: absolute;
+  width: 8rem;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 10; }
+
+.zmiti-file {
+  position: absolute;
+  z-index: 200;
+  width: 4rem;
+  left: 1.5rem;
+  opacity: 0;
+  top: 2.2rem;
+  height: 4rem; }
+
 /*# sourceMappingURL=index.css.map */

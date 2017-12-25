@@ -18,10 +18,10 @@
 			</slot>
 
 			<slot name='zmiti-btn1'>
-				<div class="zmiti-dialog-btn">重新上传</div>
+				<div class="zmiti-dialog-btn" :class="{'disabled':!headimg}" @click="reupload">重新上传</div>
 			</slot>
 			<slot name='zmiti-btn2'>
-				<div class="zmiti-dialog-btn" @click='saveimg'>保存图片</div>
+				<div  :class="{'disabled':!headimg}" class="zmiti-dialog-btn" @click='saveimg'>保存图片</div>
 			</slot>
 		</div>
 
@@ -30,6 +30,7 @@
 
 <script>
 	import './css/dialog.css';
+	import $ from 'jquery';
 
 	export default {
 		name:'zmiti-dialog',
@@ -61,6 +62,7 @@
 				        if (data.getret === 0) {
 				          var url = data.getfileurl[0].datainfourl;
 				          this.headimg = url;
+
 
 				        }
 				      });
@@ -95,7 +97,19 @@
 				this.headimg = '';
 			},
 			saveimg(){
+				if(!this.headimg){
+					return;
+				}
 				this.$emit('close-dialog');
+				this.$emit('show-record');
+				this.$emit('get-headimg',this.headimg);
+
+			},
+			reupload(){
+				if(!this.headimg){
+					return;
+				}
+				this.$refs['file'].click();
 			}
 		},
 		mounted(){
